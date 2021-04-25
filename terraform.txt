@@ -1,0 +1,142 @@
+{
+    "id": "/subscriptions/3821a056-bfd8-4200-8dc4-201cc30675b7/resourceGroups/auto-mationaccount-rg-test",
+    "name": "auto-mationaccount-rg-test",
+    "location": "eastus",
+    "tags": {},
+    "properties": {
+        "provisioningState": "Succeeded"
+    }
+}
+
+
+{
+    "name": "automation-vnet-test",
+    "id": "/subscriptions/3821a056-bfd8-4200-8dc4-201cc30675b7/resourceGroups/auto-mationaccount-rg-test/providers/Microsoft.Network/virtualNetworks/automation-vnet-test",
+    "etag": "W/\"28990391-9b6d-4948-827e-2aed646b4afd\"",
+    "type": "Microsoft.Network/virtualNetworks",
+    "location": "eastus",
+    "tags": {},
+    "properties": {
+        "provisioningState": "Succeeded",
+        "resourceGuid": "8219a1fa-60c7-4fe8-bcf2-fcbaa4502dd9",
+        "addressSpace": {
+            "addressPrefixes": [
+                "10.0.0.0/16",
+                "10.1.0.0/16"
+            ]
+        },
+        "subnets": [
+            {
+                "name": "automatio-subnet-test",
+                "id": "/subscriptions/3821a056-bfd8-4200-8dc4-201cc30675b7/resourceGroups/auto-mationaccount-rg-test/providers/Microsoft.Network/virtualNetworks/automation-vnet-test/subnets/automatio-subnet-test",
+                "etag": "W/\"28990391-9b6d-4948-827e-2aed646b4afd\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "addressPrefix": "10.0.0.0/24",
+                    "ipConfigurations": [
+                        {
+                            "id": "/subscriptions/3821a056-bfd8-4200-8dc4-201cc30675b7/resourceGroups/auto-mationaccount-rg-test/providers/Microsoft.Network/networkInterfaces/automatim-vm1-test343/ipConfigurations/ipconfig1"
+                        }
+                    ]
+                },
+                "type": "Microsoft.Network/virtualNetworks/subnets"
+            },
+            {
+                "name": "GatewaySubnet",
+                "id": "/subscriptions/3821a056-bfd8-4200-8dc4-201cc30675b7/resourceGroups/auto-mationaccount-rg-test/providers/Microsoft.Network/virtualNetworks/automation-vnet-test/subnets/GatewaySubnet",
+                "etag": "W/\"28990391-9b6d-4948-827e-2aed646b4afd\"",
+                "properties": {
+                    "provisioningState": "Succeeded",
+                    "addressPrefix": "10.0.1.0/24"
+                },
+                "type": "Microsoft.Network/virtualNetworks/subnets"
+            }
+        ]
+    }
+}
+
+
+{
+    "name": "automatim-vm1-test",
+    "id": "/subscriptions/3821a056-bfd8-4200-8dc4-201cc30675b7/resourceGroups/auto-mationaccount-rg-test/providers/Microsoft.Compute/virtualMachines/automatim-vm1-test",
+    "type": "Microsoft.Compute/virtualMachines",
+    "location": "eastus",
+    "properties": {
+        "vmId": "f51f495d-9fd1-474d-ae45-bb6856cb3d6c",
+        "hardwareProfile": {
+            "vmSize": "Standard_B1s"
+        },
+        "storageProfile": {
+            "imageReference": {
+                "publisher": "MicrosoftWindowsServer",
+                "offer": "WindowsServer",
+                "sku": "2016-Datacenter",
+                "version": "latest"
+            },
+            "osDisk": {
+                "osType": "Windows",
+                "name": "automatim-vm1-test_OsDisk_1_b8f0514095fb46d29ece11daa8dc268a",
+                "createOption": "FromImage",
+                "caching": "ReadWrite",
+                "managedDisk": {
+                    "storageAccountType": "Premium_LRS",
+                    "id": "/subscriptions/3821a056-bfd8-4200-8dc4-201cc30675b7/resourceGroups/auto-mationaccount-rg-test/providers/Microsoft.Compute/disks/automatim-vm1-test_OsDisk_1_b8f0514095fb46d29ece11daa8dc268a"
+                },
+                "diskSizeGB": 127
+            },
+            "dataDisks": []
+        },
+        "osProfile": {
+            "computerName": "automatim-vm1-t",
+            "adminUsername": "pavan",
+            "windowsConfiguration": {
+                "provisionVMAgent": true,
+                "enableAutomaticUpdates": true
+            },
+            "secrets": []
+        },
+        "networkProfile": {
+            "networkInterfaces": [
+                {
+                    "id": "/subscriptions/3821a056-bfd8-4200-8dc4-201cc30675b7/resourceGroups/auto-mationaccount-rg-test/providers/Microsoft.Network/networkInterfaces/automatim-vm1-test343"
+                }
+            ]
+        },
+        "diagnosticsProfile": {
+            "bootDiagnostics": {
+                "enabled": true
+            }
+        },
+        "provisioningState": "Succeeded"
+    }
+}
+
+
+{
+    "id": "/subscriptions/3821a056-bfd8-4200-8dc4-201cc30675b7/resourceGroups/auto-mationaccount-rg-test/providers/Microsoft.Network/trafficManagerProfiles/automation-test-trafficmanager",
+    "name": "automation-test-trafficmanager",
+    "type": "Microsoft.Network/trafficManagerProfiles",
+    "location": "global",
+    "tags": {},
+    "properties": {
+        "profileStatus": "Enabled",
+        "trafficRoutingMethod": "Performance",
+        "dnsConfig": {
+            "relativeName": "automation-test-trafficmanager",
+            "fqdn": "automation-test-trafficmanager.trafficmanager.net",
+            "ttl": 60
+        },
+        "monitorConfig": {
+            "profileMonitorStatus": "Inactive",
+            "protocol": "HTTP",
+            "port": 80,
+            "path": "/",
+            "intervalInSeconds": 30,
+            "toleratedNumberOfFailures": 3,
+            "timeoutInSeconds": 10
+        },
+        "endpoints": [],
+        "trafficViewEnrollmentStatus": "Disabled",
+        "maxReturn": 0
+    }
+}
